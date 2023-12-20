@@ -1,0 +1,565 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API SIMPLON FORMATION",
+        "description": "une api qui permet de gerer le sourcing des formation simplon",
+        "version": "1.0"
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    },
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "paths": {
+        "/api/toutesformations": {
+            "get": {
+                "summary": "voir toutes les formation",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Api Simplon formation"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/role": {
+            "get": {
+                "summary": "liste des roles",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "requette role"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "type": "string"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "créer un role",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "requette role"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/": {
+            "get": {
+                "summary": "voir une formation",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "requette Formation"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "type": "string"
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "supprimer une formation",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "requette Formation"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "type": "string"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "modifier formation",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "requette Formation"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "",
+                        "type": "string"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": "string",
+                                    "description": "string",
+                                    "start_date": "string",
+                                    "end_date": "string",
+                                    "status": "string"
+                                }
+                            },
+                            "example": {
+                                "name": "rober koko",
+                                "description": "une petite description",
+                                "start_date": "2023-01-05",
+                                "end_date": "2023-01-05",
+                                "status": "pas_terminer"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "candidater a une formation",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "requette Formation user"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/Candidature/refuser": {
+            "get": {
+                "summary": "liste candidature refusées",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Admin"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/Candidature/accepter": {
+            "get": {
+                "summary": "liste des candidature acceptées",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Admin"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/formation": {
+            "get": {
+                "summary": "liste des formations Admin",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "requette Formation"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "type": "string"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "enregistrer une formation",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "requette Formation"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "type": "string"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": "string",
+                                    "description": "string",
+                                    "start_date": "string",
+                                    "end_date": "string",
+                                    "status": "string"
+                                }
+                            },
+                            "example": {
+                                "name": "rober kiosaki",
+                                "description": "une petite description",
+                                "start_date": "2023-01-05",
+                                "end_date": "2023-01-05",
+                                "status": "pas_terminer"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "summary": "logout",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Requette user"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/login": {
+            "post": {
+                "summary": "Login candidat",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Requette user"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": "string",
+                                    "password": "string"
+                                }
+                            },
+                            "example": {
+                                "email": "charlie@gmail.com",
+                                "password": "12345678"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/refresh": {
+            "post": {
+                "summary": "refresh user",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Requette user"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "Authorization",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "/api/register": {
+            "post": {
+                "summary": "register user candidat",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "examples": {
+                            "application/json": ""
+                        }
+                    }
+                },
+                "tags": [
+                    "Requette user"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "User-Agent",
+                        "type": "string"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": "string",
+                                    "email": "string",
+                                    "password": "string",
+                                    "role_id": "string",
+                                    "address": "string",
+                                    "telephone": "string"
+                                }
+                            },
+                            "example": {
+                                "name": "rober kiosaki",
+                                "email": "robe@gamil.com",
+                                "password": "12345678",
+                                "role_id": "2",
+                                "address": "auchan",
+                                "telephone": "778527559"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
