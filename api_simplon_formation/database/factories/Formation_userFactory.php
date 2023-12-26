@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Formation_user>
  */
-class FormationUserFactory extends Factory
+class Formation_userFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,8 @@ class FormationUserFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' =>1,
+            'formation_id' =>1,
         ];
     }
 }

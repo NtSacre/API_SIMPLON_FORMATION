@@ -21,4 +21,13 @@ class RoleFactory extends Factory
             'description' => 'peut faire le crud pour une formation',
         ];
     }
+
+    public function candidat() : RoleFactory
+    {
+     return $this->state([
+        'name' => 'candidat',
+            'description' => 'peut postuler à une formation',
+    
+     ]);
+    }
 }

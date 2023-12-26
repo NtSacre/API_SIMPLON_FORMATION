@@ -27,9 +27,9 @@ class RegisterUserRequest extends FormRequest
             'name' => ['required', 'min:5', 'regex:/^[a-zA-Z\s]+$/'],
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required','min:8'],
-            'role_id' => ['required'],
+            'role_id' => ['required', 'exists:roles,id'],
             'address' => ['required'],
-            'telephone' => ['required','regex:/^(70|75|76|77|78)[0-9]{7}$/'],
+            'telephone' => ['required','regex:/^(70|75|76|77|78)[0-9]{7}$/','unique:users,telephone'],
         ];
     }
     public function failedValidation(validator $validator ){
@@ -39,7 +39,7 @@ class RegisterUserRequest extends FormRequest
             'error'=>true,
             'message'=>'erreur de validation',
             'errorList'=>$validator->errors()
-        ]));
+        ], 422));
     }
     public function messages(): array
     {

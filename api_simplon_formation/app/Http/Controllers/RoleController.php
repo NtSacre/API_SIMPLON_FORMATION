@@ -32,7 +32,7 @@ class RoleController extends Controller
     public function index()
     {
         return response()->json([
-            'staut'=>1,
+            
             'Roles'=> Role::all(),
         ], 200);
     }

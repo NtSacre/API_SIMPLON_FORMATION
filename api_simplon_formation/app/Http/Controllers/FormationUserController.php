@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Formation;
 use App\Models\Formation_user;
 use Illuminate\Support\Facades\Auth;
+
 use App\Http\Requests\StoreFormation_userRequest;
 use App\Http\Requests\UpdateFormation_userRequest;
 
@@ -297,6 +298,20 @@ class FormationUserController extends Controller
                     'message' => "Oups veuiller recommencer"
                 ],500);
         
+        }
+    }
+    public function liste_de_Candidature()
+    {
+        $formation = Formation_user::all();
+        if($formation){
+            return response()->json([
+                'formations' => $formation,
+            ], 200);
+        }else{
+            return response()->json([
+               
+                'message' =>'Aucun formation enregistré pour l\'instant ',
+            ], 201);
         }
     }
 

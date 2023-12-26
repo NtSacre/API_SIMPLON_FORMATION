@@ -24,6 +24,8 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('register', 'register');
     Route::post('logout', 'logout');
     Route::post('refresh', 'refresh');
+    
+
 });
 // route pour l'admin: ci dessous ce trouve la oute pour le role et la formation
 Route::middleware('auth:api','admin')->group(function(){
@@ -33,7 +35,12 @@ Route::middleware('auth:api','admin')->group(function(){
     Route::put('/accepterCandidature/{formation_user}', [FormationUserController::class, 'accepteCandidat']);
     Route::get('/Candidature/accepter', [FormationUserController::class, 'listeCandidatAccepter']);
     Route::get('/Candidature/refuser', [FormationUserController::class, 'listeCandidatRefuser']);
+    Route::get('/listeCandidat',  [AuthController::class, 'listeCandidat']);
+    Route::get('/listeCandidature',  [FormationUserController::class, 'liste_de_Candidature']);
+
+
 });
+
 // ce qui s'affiche lorsqu'on est pas connecter et qu'on essaye d'acceder à une route protégée
 Route::get('/login', function(){
     return response()->json([
